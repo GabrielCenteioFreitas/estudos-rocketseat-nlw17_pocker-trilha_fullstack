@@ -23,7 +23,7 @@ export async function createGoalCompletion({
         and(
           gte(goalCompletions.createdAt, firstDayOfWeek),
           lte(goalCompletions.createdAt, lastDayOfWeek),
-          eq(goals.id, goalId)
+          eq(goalCompletions.id, goalId)
         )
       )
       .groupBy(goalCompletions.goalId)
